@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class HeaderWidget extends StatelessWidget{
   String _title;
-  String _link;
+  String _routerName;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -13,7 +13,7 @@ class HeaderWidget extends StatelessWidget{
           child: Padding(
             padding: EdgeInsets.fromLTRB(10,5,10,5),
             child: Text(
-              "PWMW (세상을 이롭게 만드는 사람들)",
+              _title,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
@@ -23,7 +23,7 @@ class HeaderWidget extends StatelessWidget{
           )
       ),
       onTap: (){
-
+        Navigator.pushNamed(context, _routerName);
       },
     );
     throw UnimplementedError();

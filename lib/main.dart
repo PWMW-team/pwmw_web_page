@@ -87,19 +87,20 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
 //          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+
             Container(
               width: size.width,
               color: Colors.greenAccent,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Spacer(flex: 20),
                   InkWell(
                     child: Container(
-                      color: Colors.blue,
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(10,5,10,5),
                         child: Text(
-                          "PWMW (세상을 이롭게 만드는 사람들)",
+                          "PWMW",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 24,
@@ -114,11 +115,49 @@ class _MyHomePageState extends State<MyHomePage> {
                       });
                     },
                   ),
+                  Container(width: 50,),
                   InkWell(
                     child: Container(
-                      color: Colors.blue,
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(10,5,10,5),
+                          child: Text(
+                            "소개",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                                color: Colors.black
+                            ),
+                          ),
+                        )
                     ),
-                  )
+                    onTap: (){
+                      setState(() {
+                        _counter = 0;
+                      });
+                    },
+                  ),
+                  Container(width: 20,),
+                  InkWell(
+                    child: Container(
+                        child: Padding(
+                          padding: EdgeInsets.fromLTRB(10,5,10,5),
+                          child: Text(
+                            "구성원",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                                color: Colors.black
+                            ),
+                          ),
+                        )
+                    ),
+                    onTap: (){
+                      setState(() {
+                        _counter = 0;
+                      });
+                    },
+                  ),
+                  Spacer(flex: 60),
 
                 ],
               ),

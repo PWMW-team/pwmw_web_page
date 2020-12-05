@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pwmw/base.dart';
+import 'package:pwmw/views/header/header.dart';
+import 'package:pwmw/views/sign_in/sign_up/sign_up_screen.dart';
+import 'package:toast/toast.dart';
 
 void main() {
   runApp(MyApp());
@@ -54,6 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    void showToast(String msg, {int duration, int gravity}) {
+      Toast.show(msg, context, duration: duration, gravity: gravity);
+    }
     Size size = MediaQuery.of(context).size;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
@@ -133,9 +140,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         )
                     ),
                     onTap: (){
-                      setState(() {
-                        _counter = 0;
-                      });
+                      showToast("asd");
+                      Navigator.push(context, MaterialPageRoute<void>(
+                          builder: (BuildContext context) {
+                            return HeaderWidget();
+                          }));
                     },
                   ),
                   Container(width: 20,),

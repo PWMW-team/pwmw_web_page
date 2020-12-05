@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'PWMW',
       theme: ThemeData(
         fontFamily: "Godo",
         primarySwatch: Colors.blue,
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             Container(
               width: size.width,
-              color: Colors.greenAccent,
+              color: Colors.blue,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -100,11 +100,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(10,5,10,5),
                         child: Text(
-                          "PWMW",
+                          size.width > 650 ? "People Who Make the better World" : "PWMW",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 24,
-                              color: Colors.black
+                              color: Colors.white
                           ),
                         ),
                       )
@@ -112,6 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: (){
                       setState(() {
                         _counter = 0;
+                        print(size.width);
+                        _counter = size.width as int;
                       });
                     },
                   ),

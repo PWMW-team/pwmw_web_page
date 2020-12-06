@@ -27,7 +27,7 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   List<String> list = [];
-
+  // 멤버 클래스 선언해주고 데이터들 넣어주자 연동하자. 서버 개발하자!
   // List<OfferJob> list = List<OfferJob>(); // 이런식으로 하기도 함
   bool loadingDone = false;
 

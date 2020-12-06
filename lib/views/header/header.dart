@@ -35,7 +35,7 @@ class HeaderWidget extends StatelessWidget {
               onTap: (){
                 Navigator.push(context, MaterialPageRoute<void>(
                     builder: (BuildContext context) {
-                      return MyApp();
+                      return MyHomePage();
                     }));
               },
             ),
@@ -55,7 +55,7 @@ class HeaderWidget extends StatelessWidget {
                   )
               ),
               onTap: (){
-                Navigator.pushReplacement(context, MaterialPageRoute<void>(
+                Navigator.push(context, MaterialPageRoute<void>(
                     builder: (BuildContext context) {
                       return IntroPwmw();
                     }));

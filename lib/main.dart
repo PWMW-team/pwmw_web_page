@@ -62,12 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
       Toast.show(msg, context, duration: duration, gravity: gravity);
     }
     Size size = MediaQuery.of(context).size;
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
 //      appBar: AppBar(
 //        // Here we take the value from the MyHomePage object that was created by
@@ -75,119 +69,24 @@ class _MyHomePageState extends State<MyHomePage> {
 //        title: Text(widget.title),
 //      ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-//          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
-            Container(
-              width: size.width,
-              color: Colors.blue,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Spacer(flex: 20),
-                  InkWell(
-                    child: Container(
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(10,5,10,5),
-                        child: Text(
-                          size.width > 650 ? "People Who Make the better World" : "PWMW",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24,
-                              color: Colors.white
-                          ),
-                        ),
-                      )
-                    ),
-                    onTap: (){
-                      setState(() {
-                        _counter = 0;
-                        print(size.width);
-                        _counter = size.width as int;
-                      });
-                    },
-                  ),
-                  Container(width: 50,),
-                  InkWell(
-                    child: Container(
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(10,5,10,5),
-                          child: Text(
-                            "소개",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24,
-                                color: Colors.black
-                            ),
-                          ),
-                        )
-                    ),
-                    onTap: (){
-                      showToast("asd");
-                      Navigator.push(context, MaterialPageRoute<void>(
-                          builder: (BuildContext context) {
-                            return HeaderWidget();
-                          }));
-                    },
-                  ),
-                  Container(width: 20,),
-                  InkWell(
-                    child: Container(
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(10,5,10,5),
-                          child: Text(
-                            "구성원",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24,
-                                color: Colors.black
-                            ),
-                          ),
-                        )
-                    ),
-                    onTap: (){
-                      setState(() {
-                        _counter = 0;
-                      });
-                    },
-                  ),
-                  Spacer(flex: 60),
-
-                ],
-              ),
-            ),
+            HeaderWidget(),
             Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+//            Text(
+//              '$_counter',
+//              style: Theme.of(context).textTheme.headline4,
+//            ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+//      floatingActionButton: FloatingActionButton(
+//        onPressed: _incrementCounter,
+//        tooltip: 'Increment',
+//        child: Icon(Icons.add),
+//      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

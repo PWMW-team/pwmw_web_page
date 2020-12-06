@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pwmw/base.dart';
+import 'package:pwmw/main.dart';
+import 'package:pwmw/views/introduce_pwmw/introPwmw.dart';
 import 'package:toast/toast.dart';
 class HeaderWidget extends StatelessWidget {
   @override
@@ -7,27 +9,82 @@ class HeaderWidget extends StatelessWidget {
     void showToast(String msg, {int duration, int gravity}) {
       Toast.show(msg, context, duration: duration, gravity: gravity);
     }
+    Size size = MediaQuery.of(context).size;
     return
-//      MaterialApp(
-//      theme: ThemeData(
-//        primarySwatch: Colors.blue,
-//      ),
-//      title: "title",
-//      home:
-      Scaffold(
-        appBar: AppBar(
-          title: Text("PWMW를 소개합니다!"),
-          centerTitle: true,
-          leading: new IconButton(
-            icon: new Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () { 
-              Navigator.of(context).pop();
-              
-            },
-          ),
+      Container(
+        width: size.width,
+        color: Colors.blue,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Spacer(flex: 20),
+            InkWell(
+              child: Container(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(10,5,10,5),
+                    child: Text(
+                      size.width > 650 ? "People Who Make the better World" : "PWMW",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          color: Colors.white
+                      ),
+                    ),
+                  )
+              ),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute<void>(
+                    builder: (BuildContext context) {
+                      return MyApp();
+                    }));
+              },
+            ),
+            Container(width: 50,),
+            InkWell(
+              child: Container(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(10,5,10,5),
+                    child: Text(
+                      "소개",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          color: Colors.black
+                      ),
+                    ),
+                  )
+              ),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute<void>(
+                    builder: (BuildContext context) {
+                      return IntroPwmw();
+                    }));
+              },
+            ),
+            Container(width: 20,),
+            InkWell(
+              child: Container(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(10,5,10,5),
+                    child: Text(
+                      "구성원",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          color: Colors.black
+                      ),
+                    ),
+                  )
+              ),
+              onTap: (){
+
+              },
+            ),
+            Spacer(flex: 60),
+
+          ],
         ),
-        body: MyStatefulWidget(),
-    );
+      );
   }
   
 

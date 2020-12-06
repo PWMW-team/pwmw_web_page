@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:pwmw/main.dart';
+import 'package:pwmw/views/introduce_pwmw/introPwmw.dart';
 // We use name route
 // All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
@@ -11,4 +12,5 @@ final Map<String, WidgetBuilder> routes = {
 //  CompleteProfileScreen.routeName: (context) => CompleteProfileScreen(),
 //  OtpScreen.routeName: (context) => OtpScreen(),
   MyHomePage.routeName: (context) => MyHomePage(),
+  IntroPwmw.routeName: (context) => IntroPwmw()
 };

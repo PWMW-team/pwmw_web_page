@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pwmw/views/header/header.dart';
+import 'package:pwmw/views/items/specialOfferCard.dart';
 import 'package:toast/toast.dart';
 
 class IntroPwmw extends StatelessWidget {
@@ -33,14 +34,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   // 초기 세팅
   @override
   void initState() {
-//    fetch().then((onValue){
-//      setState(() {
-//        //list.addAll(onValue);
-//        print(onValue.length);
-//        loadingDone = true;
-//      });
-//
-//    });
     super.initState();
   }
 
@@ -57,6 +50,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SpecialOfferCard(
+              image: "https://t1.daumcdn.net/liveboard/holapet/0e5f90af436e4c218343073164a5f657.JPG",
+              title: "좋아",
+              press: (){
+
+              },
+            ),
             Text("asdASD\n"),
             Container(height: 1200,)
           ],

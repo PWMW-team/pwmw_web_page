@@ -33,7 +33,7 @@ class HeaderWidget extends StatelessWidget {
                   )
               ),
               onTap: (){
-                Navigator.pushReplacement(context, MaterialPageRoute<void>(
+                Navigator.push(context, MaterialPageRoute<void>(
                     builder: (BuildContext context) {
                       return MyApp();
                     }));

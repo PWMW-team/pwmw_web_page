@@ -35,7 +35,7 @@ class HeaderWidget extends StatelessWidget {
               onTap: (){
                 Navigator.push(context, MaterialPageRoute<void>(
                     builder: (BuildContext context) {
-                      return MyHomePage();
+                      return MyApp();
                     }));
               },
             ),

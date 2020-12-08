@@ -17,9 +17,15 @@ class HttpController {
     request.add(utf8.encode(json.encode(map)));
     print("map : " + map.toString());
     HttpClientResponse response = await request.close();
-    String reply = await response.transform(utf8.decoder).join();
-    print("Response : " + reply);
-    return reply;
+    if(response.statusCode == 200){
+      String reply = await response.transform(utf8.decoder).join();
+      print("Response : " + reply);
+      return reply;
+    }
+    else {
+      return "응답 실패";
+    }
+
   }
 
 

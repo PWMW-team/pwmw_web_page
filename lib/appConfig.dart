@@ -10,8 +10,8 @@ class AppConfig {
 // static String baseUrl = "http://13.209.65.220:8080/api/v1";
 
   // ssl 쓰자
-  static String baseUrl = "https://pwmw.xyz:8080/donda/api/v1/";
-//  static String baseUrl = "https://192.168.219.100:8080/api/v1";
+//  static String baseUrl = "https://pwmw.xyz:8080/donda/api/v1/";
+  static String baseUrl = "https://donda.shop:8080/pwmw/api/v1/";
 
 
 }
